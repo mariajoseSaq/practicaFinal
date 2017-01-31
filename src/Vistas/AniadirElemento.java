@@ -5,16 +5,20 @@
  */
 package Vistas;
 
+import Controlador.Controlador;
+
 /**
  *
  * @author Maria Jose
  */
 public class AniadirElemento extends javax.swing.JPanel {
 
+    Controlador c;
     /**
      * Creates new form AniadirElemento
      */
-    public AniadirElemento() {
+    public AniadirElemento(Controlador con) {
+       this.c=con;
         initComponents();
         PanelEntrada.setVisible(false);
         PanelSalida.setVisible(false);

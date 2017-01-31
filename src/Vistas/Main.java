@@ -5,6 +5,8 @@
  */
 package Vistas;
 
+import Controlador.Controlador;
+
 /**
  *
  * @author Maria Jose
@@ -15,9 +17,9 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        
-        AniadirElemento elemento= new AniadirElemento();
-        Ajustes aj= new Ajustes();
+        Controlador control= new Controlador();
+        AniadirElemento elemento= new AniadirElemento(control);
+        Ajustes aj= new Ajustes(control);
         initComponents();
         jTabbedPane1.addTab("Añadir elemento", elemento);
         jTabbedPane1.addTab("Ajustes Generales", aj);

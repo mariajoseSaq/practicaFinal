@@ -5,18 +5,18 @@
  */
 package Vistas;
 
+import Controlador.Controlador;
+
 /**
  *
  * @author Maria Jose
  */
 public class Ajustes extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Ajustes
-     */
-    public Ajustes() {
-
-        initComponents();
+Controlador c;
+   
+    public Ajustes(Controlador con) {
+        this.c=con;
+         initComponents();
     }
 
     /**
