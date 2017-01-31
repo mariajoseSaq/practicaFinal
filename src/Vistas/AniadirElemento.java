@@ -362,6 +362,8 @@ public class AniadirElemento extends javax.swing.JPanel {
         int numFicheros = 0;
         int numDatos = 0;
         boolean insertado = false;
+        boolean insertadoEntrada=false;
+        boolean insertadoSalida=false;
 
         if (tipo == 4) {
         //consultas externas
@@ -370,12 +372,18 @@ public class AniadirElemento extends javax.swing.JPanel {
             numDatEntrada=Integer.parseInt(datosEntrada.getText());
             numFichSalida=Integer.parseInt(ficherosSalida.getText());
             numDatSalida=Integer.parseInt(DatosSalida.getText());
+            insertadoEntrada=c.AddElto(denominacion+"CE_Entrada", tipo, numFichEntrada, numDatEntrada);
+            insertadoSalida=c.AddElto(denominacion+"CE_Salida", tipo, numFichSalida, numDatSalida);
             
 
         } else {
             numFicheros = Integer.parseInt(numFicherosT.getText());
             numDatos = Integer.parseInt(numDatosT.getText());
             insertado = c.AddElto(denominacion, tipo, numFicheros, numDatos);
+        }
+        if((insertadoEntrada && insertadoSalida)||insertado)
+        {
+        
         }
 
 
