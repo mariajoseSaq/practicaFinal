@@ -14,11 +14,12 @@ import Controlador.Controlador;
 public class AniadirElemento extends javax.swing.JPanel {
 
     Controlador c;
+
     /**
      * Creates new form AniadirElemento
      */
     public AniadirElemento(Controlador con) {
-       this.c=con;
+        this.c = con;
         initComponents();
         PanelEntrada.setVisible(false);
         PanelSalida.setVisible(false);
@@ -316,8 +317,8 @@ public class AniadirElemento extends javax.swing.JPanel {
     }//GEN-LAST:event_numFicherosTActionPerformed
 
     private void guardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBotonActionPerformed
-      
-        
+
+
     }//GEN-LAST:event_guardarBotonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -351,32 +352,33 @@ public class AniadirElemento extends javax.swing.JPanel {
     }//GEN-LAST:event_denominacionTxActionPerformed
 
     private void numDatosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numDatosTActionPerformed
-         
-        String denominacion=denominacionTx.getText();
-        int tipo=comboTr.getSelectedIndex();
-        int numFichEntrada=0;
-        int numDatEntrada=0;
-        int numFichSalida=0;
-        int numDatSalida=0;
-        int numFicheros=0;
-        int numDatos=0;
-        boolean insertado=false;
-        
-        if(tipo==4)
-        {
+
+        String denominacion = denominacionTx.getText();
+        int tipo = comboTr.getSelectedIndex();
+        int numFichEntrada = 0;
+        int numDatEntrada = 0;
+        int numFichSalida = 0;
+        int numDatSalida = 0;
+        int numFicheros = 0;
+        int numDatos = 0;
+        boolean insertado = false;
+
+        if (tipo == 4) {
         //consultas externas
-        
-        }else
-        {
-            numFicheros=Integer.parseInt(numFicherosT.getText());
-            numDatos=Integer.parseInt(numDatosT.getText());
-        //    insertado=
             
-        
+            numFichEntrada=Integer.parseInt(ficherosEntrada.getText());
+            numDatEntrada=Integer.parseInt(datosEntrada.getText());
+            numFichSalida=Integer.parseInt(ficherosSalida.getText());
+            numDatSalida=Integer.parseInt(DatosSalida.getText());
+            
+
+        } else {
+            numFicheros = Integer.parseInt(numFicherosT.getText());
+            numDatos = Integer.parseInt(numDatosT.getText());
+            insertado = c.AddElto(denominacion, tipo, numFicheros, numDatos);
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_numDatosTActionPerformed
 
 
