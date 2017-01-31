@@ -25,6 +25,10 @@ public class Proyecto {
         caracteristicas = new ArrayList();
     }
 
+    
+    public void agregarElto(Elemento e){
+    listaEltos.add(e);
+    }
     /**
      * @return the nombre
      */

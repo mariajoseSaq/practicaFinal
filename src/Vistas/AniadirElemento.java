@@ -358,8 +358,24 @@ public class AniadirElemento extends javax.swing.JPanel {
         int numDatEntrada=0;
         int numFichSalida=0;
         int numDatSalida=0;
-        int numFichderos=0;
+        int numFicheros=0;
         int numDatos=0;
+        boolean insertado=false;
+        
+        if(tipo==4)
+        {
+        //consultas externas
+        
+        }else
+        {
+            numFicheros=Integer.parseInt(numFicherosT.getText());
+            numDatos=Integer.parseInt(numDatosT.getText());
+        //    insertado=
+            
+        
+        }
+        
+        
         
     }//GEN-LAST:event_numDatosTActionPerformed
 
