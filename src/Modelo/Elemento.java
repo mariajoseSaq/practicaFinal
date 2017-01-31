@@ -22,4 +22,60 @@ public class Elemento {
      this.numDatL=nd;
      this.tipo=t;
     }
+
+    /**
+     * @return the denominacion
+     */
+    public String getDenominacion() {
+        return denominacion;
+    }
+
+    /**
+     * @param denominacion the denominacion to set
+     */
+    public void setDenominacion(String denominacion) {
+        this.denominacion = denominacion;
+    }
+
+    /**
+     * @return the tipo
+     */
+    public int getTipo() {
+        return tipo;
+    }
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    /**
+     * @return the numFich
+     */
+    public int getNumFich() {
+        return numFich;
+    }
+
+    /**
+     * @param numFich the numFich to set
+     */
+    public void setNumFich(int numFich) {
+        this.numFich = numFich;
+    }
+
+    /**
+     * @return the numDatL
+     */
+    public int getNumDatL() {
+        return numDatL;
+    }
+
+    /**
+     * @param numDatL the numDatL to set
+     */
+    public void setNumDatL(int numDatL) {
+        this.numDatL = numDatL;
+    }
 }
