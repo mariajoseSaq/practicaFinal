@@ -15,6 +15,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        
         AniadirElemento elemento= new AniadirElemento();
         Ajustes aj= new Ajustes();
         initComponents();

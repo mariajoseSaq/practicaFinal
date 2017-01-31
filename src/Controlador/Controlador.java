@@ -5,10 +5,20 @@
  */
 package Controlador;
 
+import Modelo.Proyecto;
+
 /**
  *
  * @author Maria Jose
  */
 public class Controlador {
     
+   private Proyecto pr;
+    
+   public Controlador()
+   {
+   pr=new Proyecto("Practica Final");
+   }
+   
 }
+
