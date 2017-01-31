@@ -127,4 +127,22 @@ public class Controlador {
     }
     
     
+    public int dificultadConsultaExterna(int numeroFicherosEntrada, int numeroDatosElementalesEntrada, int numeroFicherosSalida, int numeroDatosElementalesSalida) {
+        int entrada = dificultadEntradaExterna(numeroFicherosEntrada, numeroDatosElementalesEntrada);
+        int salida = dificultadSalidaExterna(numeroFicherosSalida, numeroDatosElementalesSalida);
+        if (entrada <= salida) {
+            return salida;
+        } else {
+            return entrada;
+        }
+    }
+    
+    
+    
+   public void actualizaPFNA(int valor)
+   {
+   pr.setPFNA(valor);
+   }
+    
+    
 }

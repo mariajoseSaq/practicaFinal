@@ -317,7 +317,55 @@ public class AniadirElemento extends javax.swing.JPanel {
     }//GEN-LAST:event_numFicherosTActionPerformed
 
     private void guardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBotonActionPerformed
+        String denominacion = denominacionTx.getText();
+        int tipo = comboTr.getSelectedIndex();
+        int numFichEntrada = 0;
+        int numDatEntrada = 0;
+        int numFichSalida = 0;
+        int numDatSalida = 0;
+        int numFicheros = 0;
+        int numDatos = 0;
+        boolean insertado = false;
+        boolean insertadoEntrada = false;
+        boolean insertadoSalida = false;
 
+        if (tipo == 4) {
+            //consultas externas
+
+            numFichEntrada = Integer.parseInt(ficherosEntrada.getText());
+            numDatEntrada = Integer.parseInt(datosEntrada.getText());
+            numFichSalida = Integer.parseInt(ficherosSalida.getText());
+            numDatSalida = Integer.parseInt(DatosSalida.getText());
+            insertadoEntrada = c.AddElto(denominacion + "CE_Entrada", tipo, numFichEntrada, numDatEntrada);
+            insertadoSalida = c.AddElto(denominacion + "CE_Salida", tipo, numFichSalida, numDatSalida);
+
+        } else {
+            numFicheros = Integer.parseInt(numFicherosT.getText());
+            numDatos = Integer.parseInt(numDatosT.getText());
+            insertado = c.AddElto(denominacion, tipo, numFicheros, numDatos);
+        }
+        if ((insertadoEntrada && insertadoSalida) || insertado) {
+            int filatabla = 0;
+            int columnatabla = 0;
+
+            filatabla = tipo;
+            if (tipo == 0) {
+                columnatabla = 1 + c.dificultadEntradaExterna(numFicheros, numDatos);
+                dibujaTabla(filatabla, columnatabla);
+            } else if (tipo == 1) {
+                columnatabla = 1 + c.dificultadSalidaExterna(numFicheros, numDatos);
+                dibujaTabla(filatabla, columnatabla);
+            } else if (tipo == 2 || tipo==3) {
+                columnatabla = 1 + c.dificultadGLDI(numFicheros, numDatos);
+                dibujaTabla(filatabla, columnatabla);
+
+            }else
+            {
+             columnatabla=1 + c.dificultadConsultaExterna(numFichEntrada, numDatEntrada, numFichSalida, numDatSalida);
+             dibujaTabla(filatabla, columnatabla);
+            }
+
+        }
 
     }//GEN-LAST:event_guardarBotonActionPerformed
 
@@ -353,41 +401,31 @@ public class AniadirElemento extends javax.swing.JPanel {
 
     private void numDatosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numDatosTActionPerformed
 
-        String denominacion = denominacionTx.getText();
-        int tipo = comboTr.getSelectedIndex();
-        int numFichEntrada = 0;
-        int numDatEntrada = 0;
-        int numFichSalida = 0;
-        int numDatSalida = 0;
-        int numFicheros = 0;
-        int numDatos = 0;
-        boolean insertado = false;
-        boolean insertadoEntrada=false;
-        boolean insertadoSalida=false;
-
-        if (tipo == 4) {
-        //consultas externas
-            
-            numFichEntrada=Integer.parseInt(ficherosEntrada.getText());
-            numDatEntrada=Integer.parseInt(datosEntrada.getText());
-            numFichSalida=Integer.parseInt(ficherosSalida.getText());
-            numDatSalida=Integer.parseInt(DatosSalida.getText());
-            insertadoEntrada=c.AddElto(denominacion+"CE_Entrada", tipo, numFichEntrada, numDatEntrada);
-            insertadoSalida=c.AddElto(denominacion+"CE_Salida", tipo, numFichSalida, numDatSalida);
-            
-
-        } else {
-            numFicheros = Integer.parseInt(numFicherosT.getText());
-            numDatos = Integer.parseInt(numDatosT.getText());
-            insertado = c.AddElto(denominacion, tipo, numFicheros, numDatos);
-        }
-        if((insertadoEntrada && insertadoSalida)||insertado)
-        {
-        
-        }
-
 
     }//GEN-LAST:event_numDatosTActionPerformed
+
+    public void dibujaTabla(int fila, int col) {
+        String texto;
+
+        int aux, auxTotal;
+        String[] splitTexto;
+        texto = jTable1.getValueAt(fila, col).toString();
+        splitTexto = texto.split(" ");
+
+        aux = Integer.parseInt(splitTexto[0]);
+
+        aux++;
+        splitTexto[0] = String.valueOf(aux);
+        texto = splitTexto[0] + " " + splitTexto[1] + " " + splitTexto[2];
+        jTable1.setValueAt(texto, fila, col);
+        auxTotal = Integer.parseInt(jTable1.getValueAt(fila, 4).toString()) + Integer.parseInt(splitTexto[2]);
+        jTable1.setValueAt(auxTotal, fila, 4);
+        auxTotal = Integer.parseInt(jTable1.getValueAt(0, 4).toString()) + Integer.parseInt(jTable1.getValueAt(1, 4).toString())
+                + Integer.parseInt(jTable1.getValueAt(2, 4).toString()) + Integer.parseInt(jTable1.getValueAt(3, 4).toString())
+                + Integer.parseInt(jTable1.getValueAt(4, 4).toString());
+        jTable1.setValueAt(auxTotal, 5, 4);
+        c.actualizaPFNA(auxTotal);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
