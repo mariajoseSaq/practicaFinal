@@ -6,6 +6,7 @@
 package Vistas;
 
 import Controlador.Controlador;
+import java.util.ArrayList;
 
 /**
  *
@@ -58,11 +59,11 @@ public class Ajustes extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         labelFA = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        labelPF = new javax.swing.JLabel();
+        labelPFA = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -124,7 +125,7 @@ public class Ajustes extends javax.swing.JPanel {
 
         jLabel15.setText("Total");
 
-        jLabel16.setText("0");
+        labelTotal.setText("0");
 
         jLabel17.setText("Factor de ajuste: ");
 
@@ -132,7 +133,7 @@ public class Ajustes extends javax.swing.JPanel {
 
         jLabel19.setText("Puntos función ajustados: ");
 
-        labelPF.setText(" ");
+        labelPFA.setText(" ");
 
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -209,13 +210,13 @@ public class Ajustes extends javax.swing.JPanel {
                                                     .addComponent(jLabel15)
                                                     .addGap(204, 204, 204)))
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(labelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jSpinner8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(139, 139, 139))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(481, 533, Short.MAX_VALUE)
+                        .addGap(481, 523, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addComponent(jLabel19)
@@ -223,10 +224,9 @@ public class Ajustes extends javax.swing.JPanel {
                                 .addComponent(jButton1)
                                 .addGap(59, 59, 59)
                                 .addComponent(jButton2)))))
-                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelFA)
-                    .addComponent(labelPF))
+                    .addComponent(labelFA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPFA, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(311, 311, 311))
         );
         layout.setVerticalGroup(
@@ -294,14 +294,14 @@ public class Ajustes extends javax.swing.JPanel {
                         .addComponent(jLabel15))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(labelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(labelFA, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelPF)
+                    .addComponent(labelPFA)
                     .addComponent(jLabel19))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -347,10 +347,13 @@ public class Ajustes extends javax.swing.JPanel {
         totalSuma = totalSuma + Integer.parseInt(jSpinner12.getValue().toString());
         totalSuma = totalSuma + Integer.parseInt(jSpinner13.getValue().toString());
         totalSuma = totalSuma + Integer.parseInt(jSpinner14.getValue().toString());
-        double rdo;
+       
         
-        
-
+        ArrayList<Double> datos =new ArrayList<>();
+        datos=c.CalcularPFA(totalSuma);
+        labelFA.setText(datos.get(0).toString());
+        labelPFA.setText(datos.get(1).toString());
+        labelTotal.setText(datos.get(2).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -365,7 +368,6 @@ public class Ajustes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -391,6 +393,7 @@ public class Ajustes extends javax.swing.JPanel {
     private javax.swing.JSpinner jSpinner8;
     private javax.swing.JSpinner jSpinner9;
     private javax.swing.JLabel labelFA;
-    private javax.swing.JLabel labelPF;
+    private javax.swing.JLabel labelPFA;
+    private javax.swing.JLabel labelTotal;
     // End of variables declaration//GEN-END:variables
 }

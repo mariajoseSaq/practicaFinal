@@ -84,7 +84,7 @@
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel16" min="-2" pref="16" max="-2" attributes="0"/>
+                                              <Component id="labelTotal" min="-2" pref="16" max="-2" attributes="0"/>
                                               <Component id="jSpinner8" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -98,7 +98,7 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="481" pref="533" max="32767" attributes="0"/>
+                      <EmptySpace min="481" pref="523" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -110,10 +110,9 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="labelFA" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelPF" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelFA" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="labelPFA" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
           </Group>
@@ -201,7 +200,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel16" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="labelTotal" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -211,7 +210,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelPF" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPFA" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -398,7 +397,7 @@
         <Property name="text" type="java.lang.String" value="Total"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="labelTotal">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
@@ -418,7 +417,7 @@
         <Property name="text" type="java.lang.String" value="Puntos funci&#xf3;n ajustados: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelPF">
+    <Component class="javax.swing.JLabel" name="labelPFA">
       <Properties>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
