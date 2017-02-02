@@ -73,20 +73,15 @@
                                           <Component id="jSpinner14" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="labelTotal" min="-2" pref="16" max="-2" attributes="0"/>
-                                              <Component id="jSpinner8" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                                          <Component id="jSpinner8" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="labelTotal" min="-2" pref="42" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>

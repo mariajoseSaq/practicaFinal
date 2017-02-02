@@ -101,7 +101,7 @@ public class Controlador {
             } else if (numeroDatosElementales >= 51) {
                 dificultad = "Medio";
             }
-        } else if (numeroFicheros == 2 || numeroFicheros == 5) {
+        } else if (numeroFicheros >= 2 || numeroFicheros <= 5) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 19) {
                 dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 20 && numeroDatosElementales <= 50) {
@@ -160,12 +160,12 @@ public class Controlador {
      pr.setSVA(valor);
      
      //calculo factor de ajuste
-     double factorAjuste=0;
-     factorAjuste=0.65+(0.01*pr.getSVA());
+ 
+     double factorAjuste=0.65+(0.01*pr.getSVA());
      pr.setFA(factorAjuste);
     
      //puntos funcion ajustados
-      double pfa=(pr.getPFNA()+factorAjuste);
+      double pfa=(pr.getPFNA()*factorAjuste);
       pr.setPFA(pfa);
      
      ArrayList<Double>result=new ArrayList<>();
