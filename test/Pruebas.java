@@ -49,6 +49,16 @@ public class Pruebas {
         assertEquals(resultEsperado, rdo);
     }
     
+    @Test
+    public void testSE()
+    {
+     int numFicher=1;
+     int numDatosEle=4;
+     Controlador pr= new Controlador();
+     String resultEsperado="Sencillo";
+     String rdo=pr.dificultadSalidaExterna(numFicher, numDatosEle);
+        assertEquals(resultEsperado, rdo);
+    }
     
     
     // TODO add test methods here.
