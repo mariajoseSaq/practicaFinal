@@ -119,9 +119,11 @@ public class AniadirElemento extends javax.swing.JPanel {
 
         jLabel8.setText("Número de Datos");
 
-        ficherosEntrada.setText("jTextField4");
-
-        datosEntrada.setText("jTextField5");
+        ficherosEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ficherosEntradaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelEntradaLayout = new javax.swing.GroupLayout(PanelEntrada);
         PanelEntrada.setLayout(PanelEntradaLayout);
@@ -137,10 +139,10 @@ public class AniadirElemento extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel8))
                         .addGap(35, 35, 35)
-                        .addGroup(PanelEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(datosEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ficherosEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                        .addGroup(PanelEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ficherosEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                            .addComponent(datosEntrada))))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         PanelEntradaLayout.setVerticalGroup(
             PanelEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,10 +168,6 @@ public class AniadirElemento extends javax.swing.JPanel {
 
         jLabel10.setText("Número de Datos");
 
-        ficherosSalida.setText("jTextField6");
-
-        DatosSalida.setText("jTextField7");
-
         javax.swing.GroupLayout PanelSalidaLayout = new javax.swing.GroupLayout(PanelSalida);
         PanelSalida.setLayout(PanelSalidaLayout);
         PanelSalidaLayout.setHorizontalGroup(
@@ -183,13 +181,13 @@ public class AniadirElemento extends javax.swing.JPanel {
                         .addGroup(PanelSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(PanelSalidaLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DatosSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(63, 63, 63)
+                                .addComponent(DatosSalida))
                             .addGroup(PanelSalidaLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(50, 50, 50)
-                                .addComponent(ficherosSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                                .addComponent(ficherosSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         PanelSalidaLayout.setVerticalGroup(
             PanelSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,6 +433,10 @@ public class AniadirElemento extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_numDatosTActionPerformed
+
+    private void ficherosEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ficherosEntradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ficherosEntradaActionPerformed
 
     public void dibujaTabla(int fila, int col) {
         String texto;

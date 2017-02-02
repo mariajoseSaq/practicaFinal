@@ -12,11 +12,12 @@ import Controlador.Controlador;
  * @author Maria Jose
  */
 public class Ajustes extends javax.swing.JPanel {
-Controlador c;
-   
+
+    Controlador c;
+
     public Ajustes(Controlador con) {
-        this.c=con;
-         initComponents();
+        this.c = con;
+        initComponents();
     }
 
     /**
@@ -134,6 +135,11 @@ Controlador c;
         labelPF.setText(" ");
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -294,9 +300,9 @@ Controlador c;
                     .addComponent(jLabel17)
                     .addComponent(labelFA, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(labelPF))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPF)
+                    .addComponent(jLabel19))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -322,6 +328,31 @@ Controlador c;
         jSpinner14.setValue(0);
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       //suma de todos los valores del ajuste
+
+        int totalSuma = 0;
+        totalSuma = totalSuma + Integer.parseInt(jSpinner1.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner2.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner3.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner4.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner5.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner6.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner7.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner8.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner9.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner10.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner11.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner12.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner13.getValue().toString());
+        totalSuma = totalSuma + Integer.parseInt(jSpinner14.getValue().toString());
+        double rdo;
+        
+        
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

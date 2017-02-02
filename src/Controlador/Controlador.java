@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.Elemento;
 import Modelo.Proyecto;
+import java.util.ArrayList;
 
 /**
  *
@@ -149,6 +150,31 @@ public class Controlador {
 
     public void actualizaPFNA(int valor) {
         pr.setPFNA(valor);
+    }
+    
+    
+    
+    public ArrayList<Double> CalcularPFA(int valor)
+    {
+     pr.setSVA(0);//inicializo SVA
+     pr.setSVA(valor);
+     
+     //calculo factor de ajuste
+     double factorAjuste=0;
+     factorAjuste=0.65+(0.01*pr.getSVA());
+     pr.setFA(factorAjuste);
+    
+     //puntos funcion ajustados
+      double pfa=(pr.getPFNA()+factorAjuste);
+      pr.setPFA(pfa);
+     
+     ArrayList<Double>result=new ArrayList<>();
+     result.add(factorAjuste);
+     result.add(pfa);
+     
+     double SVA=(double)pr.getSVA();
+     result.add(SVA);
+     return result ;
     }
 
 }
