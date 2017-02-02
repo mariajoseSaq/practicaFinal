@@ -29,120 +29,126 @@ public class Controlador {
             return true;
         }
     }
-    
-    //Rangos de dificultad:
-    //0 Sencilla
-    //1 Media
-    //2 Compleja
-    
-    
-   public int dificultadEntradaExterna(int numeroFicheros, int numeroDatosElementales) {
-        int dificultad = 0;
+
+    public String dificultadEntradaExterna(int numeroFicheros, int numeroDatosElementales) {
+        String dificultad = "";
         if (numeroFicheros <= 1) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 4) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 5 && numeroDatosElementales <= 15) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 16) {
-                dificultad = 1;
+                dificultad = "Medio";
             }
         } else if (numeroFicheros == 2) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 4) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 5 && numeroDatosElementales <= 15) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 16) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         } else if (numeroFicheros >= 3) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 4) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 5 && numeroDatosElementales <= 15) {
-                dificultad = 2;
+                dificultad = "Complejo";
             } else if (numeroDatosElementales >= 16) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         }
         return dificultad;
     }
 
-    public int dificultadSalidaExterna(int numeroFicheros, int numeroDatosElementales) {
-        int dificultad = 0;
+    public String dificultadSalidaExterna(int numeroFicheros, int numeroDatosElementales) {
+        String dificultad = "";
         if (numeroFicheros == 0 || numeroFicheros == 1) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 5) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 6 && numeroDatosElementales <= 19) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 20) {
-                dificultad = 1;
+                dificultad = "Medio";
             }
         } else if (numeroFicheros == 2 || numeroFicheros == 3) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 5) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 6 && numeroDatosElementales <= 19) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 20) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         } else if (numeroFicheros >= 4) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 5) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 6 && numeroDatosElementales <= 19) {
-                dificultad = 2;
+                dificultad = "Complejo";
             } else if (numeroDatosElementales >= 20) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         }
         return dificultad;
     }
 
-    public int dificultadGLDI(int numeroFicheros, int numeroDatosElementales) {
-        int dificultad = 0;
+    public String dificultadGLDI(int numeroFicheros, int numeroDatosElementales) {
+        String dificultad = "";
         if (numeroFicheros == 1) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 19) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 20 && numeroDatosElementales <= 50) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 51) {
-                dificultad = 1;
+                dificultad = "Medio";
             }
         } else if (numeroFicheros == 2 || numeroFicheros == 5) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 19) {
-                dificultad = 0;
+                dificultad = "Sencillo";
             } else if (numeroDatosElementales >= 20 && numeroDatosElementales <= 50) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 51) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         } else if (numeroFicheros >= 6) {
             if (numeroDatosElementales >= 1 && numeroDatosElementales <= 19) {
-                dificultad = 1;
+                dificultad = "Medio";
             } else if (numeroDatosElementales >= 20 && numeroDatosElementales <= 50) {
-                dificultad = 2;
+                dificultad = "Complejo";
             } else if (numeroDatosElementales >= 51) {
-                dificultad = 2;
+                dificultad = "Complejo";
             }
         }
         return dificultad;
     }
-    
-    
-    public int dificultadConsultaExterna(int numeroFicherosEntrada, int numeroDatosElementalesEntrada, int numeroFicherosSalida, int numeroDatosElementalesSalida) {
-        int entrada = dificultadEntradaExterna(numeroFicherosEntrada, numeroDatosElementalesEntrada);
-        int salida = dificultadSalidaExterna(numeroFicherosSalida, numeroDatosElementalesSalida);
-        if (entrada <= salida) {
+
+    public String dificultadConsultaExterna(int numeroFicherosEntrada, int numeroDatosElementalesEntrada, int numeroFicherosSalida, int numeroDatosElementalesSalida) {
+        String entrada = dificultadEntradaExterna(numeroFicherosEntrada, numeroDatosElementalesEntrada);
+        String salida = dificultadSalidaExterna(numeroFicherosSalida, numeroDatosElementalesSalida);
+        int sal, ent;
+        if ("Sencillo".equals(salida)) {
+            sal = 0;
+        } else if ("Medio".equals(salida)) {
+            sal = 1;
+        } else {
+            sal = 2;
+        }
+
+        if ("Sencillo".equals(entrada)) {
+            ent = 0;
+        } else if ("Medio".equals(entrada)) {
+            ent = 1;
+        } else {
+            ent = 2;
+        }
+
+        if (ent <= sal) {
             return salida;
         } else {
             return entrada;
         }
     }
-    
-    
-    
-   public void actualizaPFNA(int valor)
-   {
-   pr.setPFNA(valor);
-   }
-    
-    
+
+    public void actualizaPFNA(int valor) {
+        pr.setPFNA(valor);
+    }
+
 }

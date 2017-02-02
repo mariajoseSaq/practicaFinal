@@ -347,22 +347,54 @@ public class AniadirElemento extends javax.swing.JPanel {
         if ((insertadoEntrada && insertadoSalida) || insertado) {
             int filatabla = 0;
             int columnatabla = 0;
+            String dificultad = "";
 
             filatabla = tipo;
             if (tipo == 0) {
-                columnatabla = 1 + c.dificultadEntradaExterna(numFicheros, numDatos);
+                dificultad = c.dificultadEntradaExterna(numFicheros, numDatos);
+                if ("Sencillo".equals(dificultad)) {
+                    columnatabla = 1 + 0;
+                } else if (dificultad.equals("Medio")) {
+                    columnatabla = 1 + 1;
+                } else {
+                    columnatabla = 1 + 2;
+                }
+
                 dibujaTabla(filatabla, columnatabla);
             } else if (tipo == 1) {
-                columnatabla = 1 + c.dificultadSalidaExterna(numFicheros, numDatos);
-                dibujaTabla(filatabla, columnatabla);
-            } else if (tipo == 2 || tipo==3) {
-                columnatabla = 1 + c.dificultadGLDI(numFicheros, numDatos);
-                dibujaTabla(filatabla, columnatabla);
+                dificultad= c.dificultadSalidaExterna(numFicheros, numDatos);
+                 if ("Sencillo".equals(dificultad)) {
+                    columnatabla = 1 + 0;
+                } else if (dificultad.equals("Medio")) {
+                    columnatabla = 1 + 1;
+                } else {
+                    columnatabla = 1 + 2;
+                }
+                 dibujaTabla(filatabla, columnatabla);
+            
+            } else if (tipo == 2 || tipo == 3) {
+                dificultad=c.dificultadGLDI(numFicheros, numDatos);
+                 if ("Sencillo".equals(dificultad)) {
+                    columnatabla = 1 + 0;
+                } else if (dificultad.equals("Medio")) {
+                    columnatabla = 1 + 1;
+                } else {
+                    columnatabla = 1 + 2;
+                }
+                 dibujaTabla(filatabla, columnatabla);
 
-            }else
-            {
-             columnatabla=1 + c.dificultadConsultaExterna(numFichEntrada, numDatEntrada, numFichSalida, numDatSalida);
-             dibujaTabla(filatabla, columnatabla);
+            } else {
+                dificultad=c.dificultadConsultaExterna(numFichEntrada, numDatEntrada, numFichSalida, numDatSalida);
+             
+                if ("Sencillo".equals(dificultad)) {
+                    columnatabla = 1 + 0;
+                } else if (dificultad.equals("Medio")) {
+                    columnatabla = 1 + 1;
+                } else {
+                    columnatabla = 1 + 2;
+                }
+                 dibujaTabla(filatabla, columnatabla);
+
             }
 
         }
