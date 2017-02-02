@@ -60,6 +60,17 @@ public class Pruebas {
         assertEquals(resultEsperado, rdo);
     }
     
+      @Test
+    public void testGLDI()
+    {
+     int numFicher=7;
+     int numDatosEle=52;
+     Controlador pr= new Controlador();
+     String resultEsperado="Complejo";
+     String rdo=pr.dificultadEntradaExterna(numFicher, numDatosEle);
+        assertEquals(resultEsperado, rdo);
+    }
+    
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
