@@ -326,7 +326,7 @@ public class AniadirElemento extends javax.swing.JPanel {
         boolean insertado = false;
         boolean insertadoEntrada = false;
         boolean insertadoSalida = false;
-        System.out.println(tipo);
+        
         if (tipo == 4) {
             //consultas externas
 
