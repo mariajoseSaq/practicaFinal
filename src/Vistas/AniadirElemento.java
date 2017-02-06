@@ -384,7 +384,7 @@ public class AniadirElemento extends javax.swing.JPanel {
             } else {
                 dificultad=c.dificultadConsultaExterna(numFichEntrada, numDatEntrada, numFichSalida, numDatSalida);
              
-                if ("Sencillo".equals(dificultad)) {
+                if ("Medio".equals(dificultad)) {
                     columnatabla = 1 + 0;
                 } else if (dificultad.equals("Medio")) {
                     columnatabla = 1 + 1;
