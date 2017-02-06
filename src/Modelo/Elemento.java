@@ -10,14 +10,14 @@ package Modelo;
  * @author Maria Jose
  */
 public class Elemento {
-    private String nomb;
+    private String denominacion;
     private int tipo;
     private int numFich;
     private int numDatL;
     
     public Elemento(String n,int t, int nf, int nd)
     {
-     this.nomb=n;
+     this.denominacion=n;
      this.numFich=nf;
      this.numDatL=nd;
      this.tipo=t;
