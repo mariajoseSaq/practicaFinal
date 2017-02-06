@@ -414,7 +414,7 @@ public class AniadirElemento extends javax.swing.JPanel {
             PanelEntrada.setVisible(true);
             PanelSalida.setVisible(true);
             numFicherosT.setEnabled(false);
-            numDatosT.setEnabled(true);
+            numDatosT.setEnabled(false);
         } else {
             PanelEntrada.setVisible(false);
             PanelSalida.setVisible(false);
